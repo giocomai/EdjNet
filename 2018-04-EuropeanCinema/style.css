@@ -1,0 +1,68 @@
+/* header */
+
+.header {
+    color: black;
+    position: fixed; top: -5%;
+    text-align:left; width:100%;
+}
+
+
+.header section img {
+  box-shadow: 0;
+  margin: 0px;
+}
+
+/* footer */
+
+.footer {
+    color: black;
+    position: fixed; top: 95%;
+    text-align:center; width:100%;
+}
+
+/* general */
+
+.reveal p {
+  margin-top: 1em;
+}
+
+
+
+/* first page */
+
+.section .reveal .state-background {
+  background: white;
+  color: black;
+}
+
+.section .reveal h1, .section .reveal h2 {
+  color: black;
+}
+
+.reveal h1, .reveal h2, .reveal h3  {
+  text-align: center;
+  margin-left: 150px;
+  margin-right: 150px;
+  word-wrap: normal;
+  -moz-hyphens: none;
+}
+
+.section .reveal h3 {
+  margin-left: 140px;
+  margin-right: 140px;
+}
+
+.reveal .slides section .slideContent h2 {
+  font-size: 1.1em;
+}
+
+.exclaim .reveal .state-background {
+  background: black;
+} 
+
+.exclaim .reveal h1,
+.exclaim .reveal h2,
+.exclaim .reveal h3,
+.exclaim .reveal p {
+  color: white;
+}
