@@ -542,36 +542,6 @@
       ]
     },
     {
-      "name": "Ireland",
-      "children": [
-        {
-          "name": "Domestic (16%)",
-          "size": 16.4523,
-          "fill": "#a6ce39"
-        },
-        {
-          "name": "European (80%)",
-          "size": 80.2729,
-          "fill": "#FFCC00"
-        },
-        {
-          "name": "US-European (3%)",
-          "size": 3.2748,
-          "fill": "#5bbcd6"
-        },
-        {
-          "name": "American (%)",
-          "size": [],
-          "fill": "#6f2c91"
-        },
-        {
-          "name": "Other (%)",
-          "size": [],
-          "fill": "#f98400"
-        }
-      ]
-    },
-    {
       "name": "Iceland",
       "children": [
         {
@@ -632,36 +602,6 @@
       ]
     },
     {
-      "name": "Liechtenstein",
-      "children": [
-        {
-          "name": "Domestic (%)",
-          "size": [],
-          "fill": "#a6ce39"
-        },
-        {
-          "name": "European (100%)",
-          "size": 100,
-          "fill": "#FFCC00"
-        },
-        {
-          "name": "US-European (%)",
-          "size": [],
-          "fill": "#5bbcd6"
-        },
-        {
-          "name": "American (%)",
-          "size": [],
-          "fill": "#6f2c91"
-        },
-        {
-          "name": "Other (%)",
-          "size": [],
-          "fill": "#f98400"
-        }
-      ]
-    },
-    {
       "name": "Lithuania",
       "children": [
         {
@@ -687,36 +627,6 @@
         {
           "name": "Other (1%)",
           "size": 0.6887,
-          "fill": "#f98400"
-        }
-      ]
-    },
-    {
-      "name": "Luxembourg",
-      "children": [
-        {
-          "name": "Domestic (1%)",
-          "size": 0.8356,
-          "fill": "#a6ce39"
-        },
-        {
-          "name": "European (54%)",
-          "size": 53.5003,
-          "fill": "#FFCC00"
-        },
-        {
-          "name": "US-European (14%)",
-          "size": 13.9327,
-          "fill": "#5bbcd6"
-        },
-        {
-          "name": "American (32%)",
-          "size": 31.7314,
-          "fill": "#6f2c91"
-        },
-        {
-          "name": "Other (%)",
-          "size": [],
           "fill": "#f98400"
         }
       ]
@@ -777,36 +687,6 @@
         {
           "name": "Other (10%)",
           "size": 10.2587,
-          "fill": "#f98400"
-        }
-      ]
-    },
-    {
-      "name": "Macedonia",
-      "children": [
-        {
-          "name": "Domestic (10%)",
-          "size": 9.6351,
-          "fill": "#a6ce39"
-        },
-        {
-          "name": "European (10%)",
-          "size": 9.5393,
-          "fill": "#FFCC00"
-        },
-        {
-          "name": "US-European (16%)",
-          "size": 16.0999,
-          "fill": "#5bbcd6"
-        },
-        {
-          "name": "American (63%)",
-          "size": 62.5167,
-          "fill": "#6f2c91"
-        },
-        {
-          "name": "Other (2%)",
-          "size": 2.2089,
           "fill": "#f98400"
         }
       ]

@@ -18,6 +18,12 @@ missingData <- allFilmsDF %>% filter(str_detect(string = Year, pattern = "Total"
   tally() %>% 
   pull(Market)
 
+missingData
+
+# custom remove only particularly problematic data
+
+missingData <- c("LI", "LU", "IE", "MK")
+
 EuropeanCountriesNoMissing <- EuropeanCountries[!is.element(el = EuropeanCountries, set = missingData)]
 
 temp <- allFilmsDF %>%
