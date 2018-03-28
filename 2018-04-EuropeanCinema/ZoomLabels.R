@@ -4,6 +4,22 @@ setwd("~/Dropbox/R/EdjNet-mix/European cinema")
 allFilmsDF <- readRDS(file = "allFilmsDF.rds")
 EuropeanCountries <- allFilmsDF %>% filter(Market!="EUR EU", Market!="EUR OBS(36)", Market!="US", Market!="QC") %>% select(Market) %>% distinct() %>% arrange(Market) %>% pull(Market)
 
+
+missingData <- allFilmsDF %>% filter(str_detect(string = Year, pattern = "Total")==FALSE, str_detect(string = Year, pattern = "-")==FALSE) %>% 
+  filter(Market!="EUR EU", Market!="EUR OBS(36)", Market!="US") %>% 
+  group_by(Year, Market) %>% 
+  summarise(Admissions = sum(Admissions, na.rm = TRUE)) %>% 
+  filter(Year!="Release date", Year!="2017") %>% 
+  filter(Year>2011) %>% 
+  ungroup() %>% 
+  complete(Year, Market, fill = list(Admissions=0)) %>% 
+  filter(Admissions==0) %>% 
+  group_by(Market) %>% 
+  tally() %>% 
+  pull(Market)
+
+EuropeanCountriesNoMissing <- EuropeanCountries[!is.element(el = EuropeanCountries, set = missingData)]
+
 temp <- allFilmsDF %>%
   filter(ProductionYear>2011) %>% 
   filter(str_detect(Year, "Total")) %>% 
@@ -18,7 +34,8 @@ byMarketByType <- temp %>% mutate(Type = case_when(
 )) %>% 
   group_by(Market, Type) %>% 
   summarise(TotalAdmissions=sum(as.numeric(Admissions), na.rm = TRUE)) %>% 
-  mutate(Share=TotalAdmissions/sum(TotalAdmissions)*100)
+  mutate(Share=TotalAdmissions/sum(TotalAdmissions)*100) 
+
 
 ## with labels
 #https://bl.ocks.org/vasturiano/12da9071095fbd4df434e60d52d2d58d
@@ -81,26 +98,26 @@ isoDF <- readRDS(file = file.path("isoDF.rds"))
 
 EuropeanCountriesFullName <- data_frame(ISO.code = allFilmsDF %>% filter(Market!="EUR EU", Market!="EUR OBS(36)", Market!="US", Market!="QC") %>% select(Market) %>% distinct() %>% arrange(Market) %>% pull(Market)) %>% left_join(isoDF, by = "ISO.code") %>% pull(Country) %>% str_remove(pattern = "Former Yugoslav Republic of ") %>% str_remove(pattern = fixed(" (from June 2006)"))
 
-
-allFilmsDF %>%
-  filter(ProductionYear>2011) %>% 
-  filter(str_detect(Year, "Total")) %>% 
-  filter(str_detect(string = Market, pattern = stringr::regex(pattern = paste(EuropeanCountries, collapse = "|"))))
+EuropeanCountriesFullNameNoMissing <- EuropeanCountriesFullName[!is.element(el = EuropeanCountries, set = missingData)]
 
 
-ZoomList <- vector("list", length = length(EuropeanCountries))
 
-for (i in seq_along(EuropeanCountries)) {
-  ZoomList[[i]]$name <- EuropeanCountriesFullName[i]
-  ZoomList[[i]]$children <- list(list(name=paste0("Domestic (", round(byMarketByType$Share[byMarketByType$Market==EuropeanCountries[i]&byMarketByType$Type=="Domestic films"]), "%)"), size= byMarketByType$Share[byMarketByType$Market==EuropeanCountries[i]&byMarketByType$Type=="Domestic films"], fill = "#a6ce39"),
-                                 list(name=paste0("European (", round(byMarketByType$Share[byMarketByType$Market==EuropeanCountries[i]&byMarketByType$Type=="European films"]), "%)"), size = byMarketByType$Share[byMarketByType$Market==EuropeanCountries[i]&byMarketByType$Type=="European films"], fill = "#FFCC00"),
-                                 list(name=paste0("US-European (", round(byMarketByType$Share[byMarketByType$Market==EuropeanCountries[i]&byMarketByType$Type=="US-European co-productions"]), "%)"), size = byMarketByType$Share[byMarketByType$Market==EuropeanCountries[i]&byMarketByType$Type=="US-European co-productions"], fill = "#5bbcd6"),
-                                 list(name=paste0("American (", round(byMarketByType$Share[byMarketByType$Market==EuropeanCountries[i]&byMarketByType$Type=="American films"]), "%)"), size = byMarketByType$Share[byMarketByType$Market==EuropeanCountries[i]&byMarketByType$Type=="American films"], fill = "#6f2c91"),
-                                 list(name=paste0("Other (", round(byMarketByType$Share[byMarketByType$Market==EuropeanCountries[i]&byMarketByType$Type=="Other"]), "%)"), size = byMarketByType$Share[byMarketByType$Market==EuropeanCountries[i]&byMarketByType$Type=="Other"], fill = "#f98400"))
+ZoomList <- vector("list", length = length(EuropeanCountriesNoMissing))
+
+for (i in seq_along(EuropeanCountriesNoMissing)) {
+  
+  ZoomList[[i]]$name <- EuropeanCountriesFullNameNoMissing[i]
+  ZoomList[[i]]$children <- list(list(name=paste0("Domestic (", round(byMarketByType$Share[byMarketByType$Market==EuropeanCountriesNoMissing[i]&byMarketByType$Type=="Domestic films"]), "%)"), size= byMarketByType$Share[byMarketByType$Market==EuropeanCountriesNoMissing[i]&byMarketByType$Type=="Domestic films"], fill = "#a6ce39"),
+                                 list(name=paste0("European (", round(byMarketByType$Share[byMarketByType$Market==EuropeanCountriesNoMissing[i]&byMarketByType$Type=="European films"]), "%)"), size = byMarketByType$Share[byMarketByType$Market==EuropeanCountriesNoMissing[i]&byMarketByType$Type=="European films"], fill = "#FFCC00"),
+                                 list(name=paste0("US-European (", round(byMarketByType$Share[byMarketByType$Market==EuropeanCountriesNoMissing[i]&byMarketByType$Type=="US-European co-productions"]), "%)"), size = byMarketByType$Share[byMarketByType$Market==EuropeanCountriesNoMissing[i]&byMarketByType$Type=="US-European co-productions"], fill = "#5bbcd6"),
+                                 list(name=paste0("American (", round(byMarketByType$Share[byMarketByType$Market==EuropeanCountriesNoMissing[i]&byMarketByType$Type=="American films"]), "%)"), size = byMarketByType$Share[byMarketByType$Market==EuropeanCountriesNoMissing[i]&byMarketByType$Type=="American films"], fill = "#6f2c91"),
+                                 list(name=paste0("Other (", round(byMarketByType$Share[byMarketByType$Market==EuropeanCountriesNoMissing[i]&byMarketByType$Type=="Other"]), "%)"), size = byMarketByType$Share[byMarketByType$Market==EuropeanCountriesNoMissing[i]&byMarketByType$Type=="Other"], fill = "#f98400"))
+  
+  
 }
 
 
-ZoomList
+#ZoomList
 
 
 write(jsonlite::toJSON(x = list(name = "100% of cinema tickets sold in Europe (2011-2016)", children = ZoomList),
@@ -165,7 +182,7 @@ for (i in seq_along(EuropeanCountries)) {
                                  list(name="US-European"),
                                  list(name="American"),
                                  list(name="Other"))
-
+  
   filmTypes <- c("Domestic films", "European films", "US-European co-productions", "American films", "Other")
   
   for (j in seq_along(filmTypes)) {
@@ -181,7 +198,7 @@ for (i in seq_along(EuropeanCountries)) {
     
     ZoomList[[i]]$children[[j]] <- list(name = filmTypes[j], 
                                         children = MarketSubsetList)
-     
+    
   }
   
 }
