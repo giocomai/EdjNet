@@ -4,6 +4,6 @@ This repository includes (unpolished) R source code used to create an interactiv
 
 Data visualisations and products created within EdjNet - https://www.europeandatajournalism.eu/
 
-d3js adapted from [Zoomable Sunburst](https://bl.ocks.org/mbostock/4348373) and [Hierarchical Bar Chart](https://bl.ocks.org/mbostock/1283663).
+d3js adapted from [Zoomable Circle Packing](https://bl.ocks.org/mbostock/7607535) and [Hierarchical Bar Chart](https://bl.ocks.org/mbostock/1283663).
 
-Othre graphs based on [highcharts](https://www.highcharts.com/), created via [highcharter](http://jkunst.com/highcharter/).
+Other graphs based on [highcharts](https://www.highcharts.com/), created via [highcharter](http://jkunst.com/highcharter/).

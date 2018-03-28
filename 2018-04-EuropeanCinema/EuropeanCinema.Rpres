@@ -128,6 +128,21 @@ knit_print.htmlwidget_admissionsPerCapitaTS <- function(x, ..., options = NULL){
   iframetxt <- sprintf("<iframe  frameBorder=\"0\" src=\"%s\" width=\"100%%\"   height=\"800\"></iframe>", wdgtfname)
 
   knitr::asis_output(iframetxt)}
+
+
+knit_print.htmlwidget_mostWatched_df_eu_noFrance <- function(x, ..., options = NULL){
+
+  options(pandoc.stack.size = "2048m")
+
+  wdgtclass <- setdiff(class(x), "htmlwidget")[1]
+  wdgtrndnm <- paste0(sample(letters, size = 7), collapse = "")
+  wdgtfname <- sprintf("wdgt_%s_%s.html", wdgtclass, wdgtrndnm)
+
+  htmlwidgets::saveWidget(x, file = wdgtfname, selfcontained = TRUE, background = "transparent")
+
+  iframetxt <- sprintf("<iframe  frameBorder=\"0\" src=\"%s\" width=\"100%%\"   height=\"800\"></iframe>", wdgtfname)
+
+  knitr::asis_output(iframetxt)}
 ```
 
 ```{r Get_ISO_codes, echo=FALSE}
@@ -200,16 +215,6 @@ byType <- allFilmsDF %>%
   summarise(TotalAdmissions=sum(as.numeric(Admissions), na.rm = TRUE)) %>% 
   mutate(Share=TotalAdmissions/sum(TotalAdmissions)*100)
 
-# wesanderson::wes_palette("Darjeeling")
-# series = list(
-#   list(
-#     name = 'Share',
-#     color = 'red',
-#     data = c(29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4)
-#   )
-# )
-
-
 introPie <- highchart() %>%
   hc_chart(type = "pie", style=list(fontSize = "2em", fontFamily = "Raleway")) %>% 
   hc_add_series_labels_values(labels = byType$Type,
@@ -234,7 +239,7 @@ You can swipe on touchscreen devices, or use keyboard arrow keys.</span></div>
 Total admissions
 ========================================================
 title: false
-left: 75%
+left: 72%
 
 <div class="header">
 <a href='https://www.europeandatajournalism.eu/'><img src="logo_150.png" style="box-shadow:none;"></img></a></div>
@@ -286,12 +291,14 @@ knit_print.htmlwidget(mostWatched_hc)
 
 ***
 
-All of the top-10 most watched films in Europe are produced in the US (as only, or co-producing country).
+All of the top-10 most watched films in Europe are produced <span style="background-color: #6f2c91; color: white;">in full</span> or <span style="background-color: #5bbcd6; color: white;">partly</span> in the US.
+
+Film series such as *Lord of the rings* and *Harry Potter* feature prominently
 
 Admissions to EU-produced films
 ========================================================
 title: false
-left: 75%
+left: 70%
 
 <div class="header">
 <a href='https://www.europeandatajournalism.eu/'><img src="logo_150.png" style="box-shadow:none;"></img></a></div>
@@ -309,12 +316,14 @@ mostWatched_df_eu  <- allFilmsDF %>%
   ungroup() %>% 
   mutate(Title = paste0(Title, "<br />", Director, " (", ProducingCountry, ", " , ProductionYear, ")")) %>% 
   mutate(Type = case_when(
+    str_detect(string = ProducingCountry, pattern = "FR")&str_detect(string = ProducingCountry, pattern = paste(EuropeanCountries, collapse = "|")) ~ "French productions",
     str_detect(string = ProducingCountry, pattern = "US")&str_detect(string = ProducingCountry, pattern = paste(EuropeanCountries, collapse = "|")) ~ "American/European co-productions",
     str_detect(string = ProducingCountry, pattern = "US") ~ "American films", 
     str_detect(string = ProducingCountry, pattern = stringr::regex(pattern = paste(EuropeanCountries, collapse = "|"))) ~ "European films", 
     TRUE ~ "Other films"
   )) %>% 
   mutate(Colour = case_when(
+    str_detect(string = ProducingCountry, pattern = "FR")&str_detect(string = ProducingCountry, pattern = paste(EuropeanCountries, collapse = "|")) ~ "#6f2c91",
     str_detect(string = ProducingCountry, pattern = "US")&str_detect(string = ProducingCountry, pattern = paste(EuropeanCountries, collapse = "|")) ~ "#EBCC2A",
     str_detect(string = ProducingCountry, pattern = "US") ~ "#3B9AB2", 
     str_detect(string = ProducingCountry, pattern = stringr::regex(pattern = paste(EuropeanCountries, collapse = "|"))) ~ "#a6ce39", 
@@ -342,8 +351,76 @@ knit_print.htmlwidget_mostWatched_hc_eu(mostWatched_hc_eu)
 
 ***
 
-If it is not produced by the US, it probably involves France.
-Here is the top-10 non-US films most watched across Europe.
+If it is not produced in the US, it probably involves <span style="background-color: #6f2c91; color: white;">France</span>.
+
+Here is the top-10 films most watched across Europe, excluding US productions.
+
+
+Admissions to EU-produced films, excluding France
+========================================================
+title: false
+left: 70%
+
+<div class="header">
+<a href='https://www.europeandatajournalism.eu/'><img src="logo_150.png" style="box-shadow:none;"></img></a></div>
+
+```{r}
+mostWatched_df_eu_noFrance <- allFilmsDF %>%
+  filter(Market == "EUR OBS(36)"|Market == "FR", str_detect(Year, "Total")) %>%
+  select(-`Release date`, -Distributor) %>% 
+  spread(key = Market, value = Admissions, fill = 0) %>% 
+  mutate(Admissions = `EUR OBS(36)` - FR) %>% 
+  ungroup() %>% 
+  group_by(Title) %>% 
+  select(-FR, -`EUR OBS(36)`) %>% 
+  filter(Admissions>0) %>% 
+  arrange(desc(Admissions)) %>%
+  select(Title, Director, ProductionYear, Admissions, ProducingCountry) %>%
+  filter(str_detect(string = ProducingCountry, pattern = stringr::regex(pattern = paste(EuropeanCountries, collapse = "|")))) %>% 
+  filter(str_detect(string = ProducingCountry, pattern = stringr::regex(pattern = "US"))==FALSE) %>% 
+  head(10) %>% 
+  mutate(ProducingCountry = stringr::str_replace(string = ProducingCountry, pattern = stringr::fixed(pattern = " [Co-production]"), replacement = "")) %>% 
+  ungroup() %>% 
+  mutate(Title = paste0(Title, "<br />", Director, " (", ProducingCountry, ", " , ProductionYear, ")")) %>% 
+  mutate(Type = case_when(
+      str_detect(string = ProducingCountry, pattern = "FR")&str_detect(string = ProducingCountry, pattern = paste(EuropeanCountries, collapse = "|")) ~ "French productions",
+    str_detect(string = ProducingCountry, pattern = "US")&str_detect(string = ProducingCountry, pattern = paste(EuropeanCountries, collapse = "|")) ~ "American/European co-productions",
+    str_detect(string = ProducingCountry, pattern = "US") ~ "American films", 
+    str_detect(string = ProducingCountry, pattern = stringr::regex(pattern = paste(EuropeanCountries, collapse = "|"))) ~ "European films", 
+    TRUE ~ "Other films"
+  )) %>% 
+  mutate(Colour = case_when(
+    str_detect(string = ProducingCountry, pattern = "FR")&str_detect(string = ProducingCountry, pattern = paste(EuropeanCountries, collapse = "|")) ~ "#6f2c91",
+    str_detect(string = ProducingCountry, pattern = "US")&str_detect(string = ProducingCountry, pattern = paste(EuropeanCountries, collapse = "|")) ~ "#EBCC2A",
+    str_detect(string = ProducingCountry, pattern = "US") ~ "#3B9AB2", 
+    str_detect(string = ProducingCountry, pattern = stringr::regex(pattern = paste(EuropeanCountries, collapse = "|"))) ~ "#a6ce39", 
+    TRUE ~ "#5bbcd6"
+  )) 
+
+
+  mostWatched_df_eu_noFrance_hc <- highchart() %>% 
+  hc_chart(type = "bar") %>% 
+  hc_add_series_labels_values(name = "Admissions",
+                              labels = mostWatched_df_eu_noFrance$Title,
+                              values = mostWatched_df_eu_noFrance$Admissions,
+                              colors = mostWatched_df_eu_noFrance$Colour, 
+                              showInLegend = FALSE) %>% 
+  hc_title(text = "European films (with no US involvement) most watched in European cinemas (excluding France) since 1996",
+           style = list(fontWeight = "bold", fontFamily = "Raleway")) %>% 
+  hc_xAxis(categories = mostWatched_df_eu_noFrance$Title, title = "", labels = list(style=list(fontFamily = "Raleway"))) %>% 
+  hc_plotOptions(
+    column = list(
+      colorByPoint = TRUE
+    )) 
+  
+  knit_print.htmlwidget_mostWatched_df_eu_noFrance(mostWatched_df_eu_noFrance_hc)
+```
+
+***
+
+Even excluding from the totals all cinema tickets sold in France, the top-10 is still filled with <span style="background-color: #6f2c91; color: white;">French productions</span>. 
+
+French films are popular well beyond their home market. 
 
 Who watches most films produced in their home country?
 ========================================================
@@ -434,22 +511,33 @@ knit_print.htmlwidget_homeshare_small(homeShare_HC_small)
 
 Which films do Europeans watch?
 ========================================================
-title: true
-left: 60%
+title: false
+left: 73%
 
 <div class="header">
 <a href='https://www.europeandatajournalism.eu/'><img src="logo_150.png" style="box-shadow:none;"></img></a></div>
 
-<iframe frameBorder="0" src="zoomLabelsShare/index.html" width="600"   height="600"></iframe>
+<iframe frameBorder="0" src="ZoomableCircle/index.html" width="100%" height="680"></iframe>
 
 ***
 
-In most European countries, Hollywood dominates the market. 
+In most European countries, Hollywood dominates the market.
+
+<div style="font-size: 0.5em">
+<span style="background-color: #6f2c91; color: white;">US productions</span>
+<br />
+<span style="background-color: #5bbcd6; color: white;">US-European co-productions</span>
+<br />
+<span style="background-color: #a6ce39; color: white;">Domestic</span>
+<br />
+<span style="background-color: #ffcc00; color: white;">European productions</span>
+<br />
+<span style="background-color: #f98400; color: white;">Other</span>
  
-Click on a slice to zoom in and see the details for each country, click on the centre to zoom out. Hover to read the label of smaller slices.
+<span style = "font-size: 1em; line-height:0.9em; display:block; margin-top:20px;">Click on a circle to zoom in and see the details for each country, click again to zoom out.</span>
 
 
-Which films exactly?
+What have we watched in 2016?
 ========================================================
 title: true
 
@@ -457,17 +545,16 @@ title: true
 <a href='https://www.europeandatajournalism.eu/'><img src="logo_150.png" style="box-shadow:none;"></img></a></div>
 <div class="footer" style="margin-top:-100px;">This includes <i>all</i> tickets sold in 2016. If you went to the cinema in 2016, you're in this graph.<br />
 <span style="font-size: 70%; line-height:0.8em; display:block; margin-top:20px;">Click on the bars of the barchart to dig deeper.<br />
-Click on the white space next to the bars to zoom back out.</span>
+Click anywhere in the graph to zoom back out.</span>
 </div>
  
 <iframe frameBorder="0" src="barchart/index.html" width="100%" height="480"></iframe>
 
 
-
 Who goes more often to the cinema?
 ========================================================
 title: true
-left: 70%
+left: 66%
 
 <div class="header">
 <a href='https://www.europeandatajournalism.eu/'><img src="logo_150.png" style="box-shadow:none;"></img></a></div>
@@ -491,7 +578,7 @@ AdmPerCapita2016 <- AdmPerCapita %>% filter(Year==2016) %>% mutate(Colour = "#6f
   hc_chart(type = "bar") %>% 
   hc_add_series_labels_values(name = "Admissions per capita",
                               labels = AdmPerCapita2016$country,
-                              values = AdmPerCapita2016$AdmissionsPerCapita,
+                              values = round(AdmPerCapita2016$AdmissionsPerCapita, 2),
                               colors = AdmPerCapita2016$Colour, 
                               showInLegend = FALSE) %>% 
   hc_title(text = "Cinema tickets per capita in 2016",
@@ -507,7 +594,7 @@ AdmPerCapita2016 <- AdmPerCapita %>% filter(Year==2016) %>% mutate(Colour = "#6f
 
 ***
 
-There is North-South and an East-West dimension.
+There seems to be a North-South and an East-West dimension.
 
 Exceptions to the rule (such as Estonia) may provide hints about which policies bring more people to the cinema. 
 
@@ -523,7 +610,7 @@ left: 60%
 
 admissionsPerCapitaTS_HC <- hchart(AdmPerCapita %>% filter(Market=="RO"|Market=="FR"|Market=="ES"|Market=="EE"), "line", hcaes(x = Year, y = round(AdmissionsPerCapita, digits = 2), group = country)) %>% 
   hc_tooltip(table = TRUE, sort = TRUE) %>%
-  hc_title(text = "Cinema tickets per capita (1996-2016)",
+  hc_title(text = "Cinema tickets per capita<br />(1996-2016)",
            style = list(fontWeight = "bold", fontFamily = "Raleway")) %>% 
   hc_xAxis(title = "", labels = list(style=list(fontFamily = "Raleway"))) %>% 
   hc_yAxis(title = "", labels = list(style=list(fontFamily = "Raleway"))) %>% 
@@ -538,7 +625,7 @@ knit_print.htmlwidget_admissionsPerCapitaTS(admissionsPerCapitaTS_HC)
 <div style="font-size: 0.7em">
 <span style="background-color: #6f2c91; color: white;">Estonia</span>'s case is particularly remarkable, as cinema-going has increased substantially in the last two decades.
 <br /><br />
-In <span style="background-color: #5bbcd6; color: white;">France</span>, this figure has remained overall stable
+In <span style="background-color: #5bbcd6; color: white;">France</span>, this figure has remained relatively stable
 <br /><br />
 In <span style="background-color: #f98400; color: white;">Spain</span>, it apparently followed the trajectory of the economy. 
 <br /><br />
@@ -548,8 +635,11 @@ Sources
 ========================================================
 title: true
 
-Data have been extracted from the database [Lumiere](http://lumiere.obs.coe.int/web/search/), which "is the result of the collaboration between the European Audiovisual Observatory and the various specialised national sources as well as the MEDIA Programme of the European Union", and may not be complete for all countries/all years. More details aboout admissions to each film distributed in Europe is available on their website.
+<div class="header">
+<a href='https://www.europeandatajournalism.eu/'><img src="logo_150.png" style="box-shadow:none;"></img></a></div>
+
+Data have been extracted from the database [Lumiere](http://lumiere.obs.coe.int/web/search/), which "is the result of the collaboration between the European Audiovisual Observatory and the various specialised national sources as well as the MEDIA Programme of the European Union", and may not be complete for all countries/all years. More details about admissions to each film distributed in Europe is available on their website.
 
 Data processing and visualisations by [Giorgio Comai](https://twitter.com/giocomai)/[OBCT](https://www.balcanicaucaso.org/).
 
-This is a product by the [European Data Journalism Network](https://www.europeandatajournalism.eu/) and is distributed under a [Creative Commons](https://creativecommons.org/licenses/by/4.0/) license (BY). All source code is available on GitHub.
+This is a product by the [European Data Journalism Network](https://www.europeandatajournalism.eu/) and is distributed under a [Creative Commons](https://creativecommons.org/licenses/by/4.0/) license (BY). All source code is available on [GitHub](https://github.com/giocomai/EdjNet/tree/master/2018-04-EuropeanCinema).
