@@ -117,11 +117,11 @@ if (file.exists("allFilmsLong.rds")==FALSE) {
   allFilmsLong <- as.list(names(filmLinks))
 for (i in seq_along(allFilms)[is.na(allFilms)==FALSE]) {
   if (is.element(el = "Distributor", set = colnames(allFilms[[i]]))==TRUE&is.element(el = "Release date", set = colnames(allFilms[[i]]))==TRUE) {
-    allFilmsLong[[i]] <- allFilms[[i]] %>% gather(Year, Admissions, 4:(ncol(allFilms[[i]])-3)) %>% mutate(ID = i, Title = names(filmLinks)[i], Admissions = as.character(Admissions), Link = filmLinks[i]) %>% select(ID, Title, everything())
+    allFilmsLong[[i]] <- allFilms[[i]] %>% gather(Year, Admissions, 4:(ncol(allFilms[[i]])-3)) %>% mutate(ID = i, Title = names(filmLinks)[i], Admissions = as.character(Admissions), Link = filmLinks[i]) %>% select(ID, Title, Market, Distributor, `Release date`, Director, ProducingCountry, ProductionYear, Year, Admissions, Link)
   } else if (is.element(el = "Distributor", set = colnames(allFilms[[i]]))==TRUE) {
-    allFilmsLong[[i]] <- allFilms[[i]] %>% gather(Year, Admissions, 3:(ncol(allFilms[[i]])-3)) %>% mutate(ID = i, Title = names(filmLinks)[i], `Release date` = NA, Admissions = as.character(Admissions), Link = filmLinks[i]) %>% select(ID, Title, everything())
+    allFilmsLong[[i]] <- allFilms[[i]] %>% gather(Year, Admissions, 3:(ncol(allFilms[[i]])-3)) %>% mutate(ID = i, Title = names(filmLinks)[i], `Release date` = NA, Admissions = as.character(Admissions), Link = filmLinks[i]) %>% select(ID, Title, Market, Distributor, `Release date`, Director, ProducingCountry, ProductionYear, Year, Admissions, Link)
   } else {
-    allFilmsLong[[i]] <- allFilms[[i]] %>% gather(Year, Admissions, 2:(ncol(allFilms[[i]])-3)) %>% mutate(ID = i, Title = names(filmLinks)[i]) %>% mutate(Distributor = NA, `Release date` = NA, Admissions = as.character(Admissions), Link = filmLinks[i]) %>% select(ID, Title, Market, Distributor, `Release date`, everything())
+    allFilmsLong[[i]] <- allFilms[[i]] %>% gather(Year, Admissions, 2:(ncol(allFilms[[i]])-3)) %>% mutate(ID = i, Title = names(filmLinks)[i]) %>% mutate(Distributor = NA, `Release date` = NA, Admissions = as.character(Admissions), Link = filmLinks[i]) %>% select(ID, Title, Market, Distributor, `Release date`, Director, ProducingCountry, ProductionYear, Year, Admissions, Link)
   }
 }
   names(allFilmsLong) <- names(filmLinks)
@@ -133,7 +133,8 @@ for (i in seq_along(allFilms)[is.na(allFilms)==FALSE]) {
 
 
 if (file.exists("allFilmsDF.rds")==FALSE) {
-  allFilmsDF <- bind_rows(x = allFilmsLong[is.na(allFilms)==FALSE]) %>% mutate(Admissions = as.integer(gsub(pattern = " ", replacement = "", x = Admissions)))
+  allFilmsDF <- bind_rows(x = allFilmsLong[is.na(allFilms)==FALSE]) %>%
+    mutate(Admissions = as.integer(gsub(pattern = " ", replacement = "", x = Admissions)))
   
   saveRDS(object = allFilmsDF, file = "allFilmsDF.rds")
   write_csv(x = allFilmsDF, path = "allFilmsDF.csv")

@@ -6,27 +6,27 @@
       "children": [
         {
           "name": "Domestic (4%)",
-          "size": 4.3437,
+          "size": 4.2953,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (18%)",
-          "size": 18.4497,
+          "name": "European (20%)",
+          "size": 19.744,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (14%)",
-          "size": 14.1495,
+          "size": 13.8467,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (63%)",
-          "size": 62.8221,
+          "name": "US (61%)",
+          "size": 61.2985,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (0%)",
-          "size": 0.235,
+          "name": "Other (1%)",
+          "size": 0.8156,
           "fill": "#f98400"
         }
       ]
@@ -36,27 +36,27 @@
       "children": [
         {
           "name": "Domestic (1%)",
-          "size": 1.1703,
+          "size": 1.1663,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (10%)",
-          "size": 10.4115,
+          "name": "European (11%)",
+          "size": 10.5316,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (18%)",
-          "size": 17.8362,
+          "size": 17.7755,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (65%)",
-          "size": 65.4665,
+          "name": "US (64%)",
+          "size": 64.0038,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (5%)",
-          "size": 5.1154,
+          "name": "Other (7%)",
+          "size": 6.5229,
           "fill": "#f98400"
         }
       ]
@@ -65,28 +65,28 @@
       "name": "Belgium",
       "children": [
         {
-          "name": "Domestic (14%)",
-          "size": 14.3484,
+          "name": "Domestic (15%)",
+          "size": 14.5205,
           "fill": "#a6ce39"
         },
         {
           "name": "European (14%)",
-          "size": 13.5643,
+          "size": 14.2118,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (14%)",
-          "size": 13.7397,
+          "size": 13.7979,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (58%)",
-          "size": 58.1851,
+          "name": "US (57%)",
+          "size": 56.8106,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (0%)",
-          "size": 0.1625,
+          "name": "Other (1%)",
+          "size": 0.6592,
           "fill": "#f98400"
         }
       ]
@@ -96,27 +96,27 @@
       "children": [
         {
           "name": "Domestic (3%)",
-          "size": 2.6161,
+          "size": 2.653,
           "fill": "#a6ce39"
         },
         {
           "name": "European (6%)",
-          "size": 5.5687,
+          "size": 6.0315,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (17%)",
-          "size": 16.8916,
+          "size": 16.7124,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (75%)",
-          "size": 74.5986,
+          "name": "US (73%)",
+          "size": 73.15,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (0%)",
-          "size": 0.325,
+          "name": "Other (1%)",
+          "size": 1.4532,
           "fill": "#f98400"
         }
       ]
@@ -126,27 +126,27 @@
       "children": [
         {
           "name": "Domestic (7%)",
-          "size": 7.1341,
+          "size": 7.0009,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (21%)",
-          "size": 21.1772,
+          "name": "European (23%)",
+          "size": 23.1016,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (16%)",
-          "size": 16.1604,
+          "size": 15.6248,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (55%)",
-          "size": 54.8253,
+          "name": "US (53%)",
+          "size": 52.6782,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (1%)",
-          "size": 0.703,
+          "name": "Other (2%)",
+          "size": 1.5946,
           "fill": "#f98400"
         }
       ]
@@ -156,27 +156,27 @@
       "children": [
         {
           "name": "Domestic (4%)",
-          "size": 4.3298,
+          "size": 4.3328,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (6%)",
-          "size": 6.4711,
+          "name": "European (7%)",
+          "size": 6.8652,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (18%)",
-          "size": 18.3104,
+          "size": 18.2263,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (71%)",
-          "size": 70.5943,
+          "name": "US (70%)",
+          "size": 69.5874,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (0%)",
-          "size": 0.2943,
+          "name": "Other (1%)",
+          "size": 0.9882,
           "fill": "#f98400"
         }
       ]
@@ -185,28 +185,28 @@
       "name": "Czech Republic",
       "children": [
         {
-          "name": "Domestic (24%)",
-          "size": 23.8053,
+          "name": "Domestic (25%)",
+          "size": 24.6803,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (7%)",
-          "size": 7.1651,
+          "name": "European (8%)",
+          "size": 8.003,
           "fill": "#FFCC00"
         },
         {
-          "name": "US-European (15%)",
-          "size": 14.8095,
+          "name": "US-European (14%)",
+          "size": 14.4065,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (54%)",
-          "size": 53.9757,
+          "name": "US (52%)",
+          "size": 51.7758,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (0%)",
-          "size": 0.2443,
+          "name": "Other (1%)",
+          "size": 1.1344,
           "fill": "#f98400"
         }
       ]
@@ -215,28 +215,28 @@
       "name": "Germany",
       "children": [
         {
-          "name": "Domestic (25%)",
-          "size": 24.5184,
+          "name": "Domestic (24%)",
+          "size": 24.0349,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (7%)",
-          "size": 6.9315,
+          "name": "European (9%)",
+          "size": 8.882,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (11%)",
-          "size": 11.2017,
+          "size": 10.9733,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (57%)",
-          "size": 57.0798,
+          "name": "US (55%)",
+          "size": 55.3207,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (0%)",
-          "size": 0.2687,
+          "name": "Other (1%)",
+          "size": 0.789,
           "fill": "#f98400"
         }
       ]
@@ -245,28 +245,28 @@
       "name": "Denmark",
       "children": [
         {
-          "name": "Domestic (30%)",
-          "size": 29.7495,
+          "name": "Domestic (28%)",
+          "size": 28.4653,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (6%)",
-          "size": 6.1689,
+          "name": "European (8%)",
+          "size": 7.9193,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (14%)",
-          "size": 14.2369,
+          "size": 13.7309,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (50%)",
-          "size": 49.5934,
+          "name": "US (49%)",
+          "size": 49.0983,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (0%)",
-          "size": 0.2513,
+          "name": "Other (1%)",
+          "size": 0.7861,
           "fill": "#f98400"
         }
       ]
@@ -275,28 +275,28 @@
       "name": "Estonia",
       "children": [
         {
-          "name": "Domestic (9%)",
-          "size": 8.6666,
+          "name": "Domestic (8%)",
+          "size": 8.3087,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (12%)",
-          "size": 12.4014,
+          "name": "European (13%)",
+          "size": 13.3362,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (15%)",
-          "size": 14.8399,
+          "size": 14.7569,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (64%)",
-          "size": 63.5238,
+          "name": "US (62%)",
+          "size": 61.9469,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (1%)",
-          "size": 0.5683,
+          "name": "Other (2%)",
+          "size": 1.6513,
           "fill": "#f98400"
         }
       ]
@@ -305,28 +305,28 @@
       "name": "Spain",
       "children": [
         {
-          "name": "Domestic (20%)",
-          "size": 19.8078,
+          "name": "Domestic (19%)",
+          "size": 19.3117,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (5%)",
-          "size": 5.4946,
+          "name": "European (7%)",
+          "size": 6.9276,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (14%)",
-          "size": 14.2,
+          "size": 13.8456,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (60%)",
-          "size": 60.0432,
+          "name": "US (59%)",
+          "size": 58.7859,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (0%)",
-          "size": 0.4543,
+          "name": "Other (1%)",
+          "size": 1.1291,
           "fill": "#f98400"
         }
       ]
@@ -336,27 +336,27 @@
       "children": [
         {
           "name": "Domestic (28%)",
-          "size": 27.9678,
+          "size": 27.7925,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (6%)",
-          "size": 5.8604,
+          "name": "European (7%)",
+          "size": 6.5876,
           "fill": "#FFCC00"
         },
         {
-          "name": "US-European (15%)",
-          "size": 14.8605,
+          "name": "US-European (14%)",
+          "size": 14.4495,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (51%)",
-          "size": 50.978,
+          "name": "US (50%)",
+          "size": 50.1255,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (0%)",
-          "size": 0.3333,
+          "name": "Other (1%)",
+          "size": 1.045,
           "fill": "#f98400"
         }
       ]
@@ -366,27 +366,27 @@
       "children": [
         {
           "name": "Domestic (40%)",
-          "size": 39.5432,
+          "size": 39.6338,
           "fill": "#a6ce39"
         },
         {
           "name": "European (3%)",
-          "size": 2.5927,
+          "size": 2.875,
           "fill": "#FFCC00"
         },
         {
-          "name": "US-European (11%)",
-          "size": 10.5022,
+          "name": "US-European (10%)",
+          "size": 10.277,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (46%)",
-          "size": 46.1724,
+          "name": "US (45%)",
+          "size": 45.0939,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (1%)",
-          "size": 1.1897,
+          "name": "Other (2%)",
+          "size": 2.1203,
           "fill": "#f98400"
         }
       ]
@@ -396,27 +396,27 @@
       "children": [
         {
           "name": "Domestic (26%)",
-          "size": 25.6888,
+          "size": 25.7116,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (2%)",
-          "size": 2.267,
+          "name": "European (3%)",
+          "size": 2.6008,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (3%)",
-          "size": 3.2934,
+          "size": 3.3027,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (67%)",
-          "size": 67.1443,
+          "name": "US (66%)",
+          "size": 66.031,
           "fill": "#6f2c91"
         },
         {
           "name": "Other (2%)",
-          "size": 1.6065,
+          "size": 2.3539,
           "fill": "#f98400"
         }
       ]
@@ -426,27 +426,27 @@
       "children": [
         {
           "name": "Domestic (2%)",
-          "size": 2.0141,
+          "size": 2.005,
           "fill": "#a6ce39"
         },
         {
           "name": "European (8%)",
-          "size": 8.4593,
+          "size": 8.4111,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (19%)",
-          "size": 19.2214,
+          "size": 19.1467,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (70%)",
-          "size": 69.6382,
+          "name": "US (70%)",
+          "size": 69.5687,
           "fill": "#6f2c91"
         },
         {
           "name": "Other (1%)",
-          "size": 0.667,
+          "size": 0.8685,
           "fill": "#f98400"
         }
       ]
@@ -456,27 +456,27 @@
       "children": [
         {
           "name": "Domestic (7%)",
-          "size": 7.0926,
+          "size": 6.9834,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (11%)",
-          "size": 11.0917,
+          "name": "European (12%)",
+          "size": 11.9342,
           "fill": "#FFCC00"
         },
         {
-          "name": "US-European (20%)",
-          "size": 19.6005,
+          "name": "US-European (19%)",
+          "size": 18.9743,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (62%)",
-          "size": 61.85,
+          "name": "US (61%)",
+          "size": 60.8065,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (0%)",
-          "size": 0.3651,
+          "name": "Other (1%)",
+          "size": 1.3016,
           "fill": "#f98400"
         }
       ]
@@ -485,28 +485,28 @@
       "name": "Croatia",
       "children": [
         {
-          "name": "Domestic (5%)",
-          "size": 5.0391,
+          "name": "Domestic (6%)",
+          "size": 5.6777,
           "fill": "#a6ce39"
         },
         {
           "name": "European (8%)",
-          "size": 7.9556,
+          "size": 8.4596,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (16%)",
-          "size": 15.8871,
+          "size": 15.6239,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (70%)",
-          "size": 70.2789,
+          "name": "US (68%)",
+          "size": 68.0699,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (1%)",
-          "size": 0.8392,
+          "name": "Other (2%)",
+          "size": 2.1689,
           "fill": "#f98400"
         }
       ]
@@ -516,27 +516,27 @@
       "children": [
         {
           "name": "Domestic (3%)",
-          "size": 3.3174,
+          "size": 3.2987,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (7%)",
-          "size": 7.1242,
+          "name": "European (8%)",
+          "size": 7.9955,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (15%)",
-          "size": 15.4315,
+          "size": 15.1561,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (74%)",
-          "size": 73.7889,
+          "name": "US (72%)",
+          "size": 72.0266,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (0%)",
-          "size": 0.338,
+          "name": "Other (2%)",
+          "size": 1.523,
           "fill": "#f98400"
         }
       ]
@@ -546,27 +546,27 @@
       "children": [
         {
           "name": "Domestic (9%)",
-          "size": 8.7598,
+          "size": 8.713,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (6%)",
-          "size": 6.2383,
+          "name": "European (7%)",
+          "size": 6.6776,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (16%)",
-          "size": 15.7657,
+          "size": 15.7426,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (69%)",
-          "size": 69.0365,
+          "name": "US (68%)",
+          "size": 67.6061,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (0%)",
-          "size": 0.1998,
+          "name": "Other (1%)",
+          "size": 1.2607,
           "fill": "#f98400"
         }
       ]
@@ -575,28 +575,28 @@
       "name": "Italy",
       "children": [
         {
-          "name": "Domestic (29%)",
-          "size": 28.5269,
+          "name": "Domestic (27%)",
+          "size": 27.4137,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (7%)",
-          "size": 7.3058,
+          "name": "European (9%)",
+          "size": 8.7504,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (14%)",
-          "size": 14.1228,
+          "size": 13.7848,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (49%)",
-          "size": 48.9054,
+          "name": "US (48%)",
+          "size": 48.1386,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (1%)",
-          "size": 1.1392,
+          "name": "Other (2%)",
+          "size": 1.9125,
           "fill": "#f98400"
         }
       ]
@@ -605,28 +605,28 @@
       "name": "Lithuania",
       "children": [
         {
-          "name": "Domestic (18%)",
-          "size": 17.6064,
+          "name": "Domestic (17%)",
+          "size": 17.3942,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (10%)",
-          "size": 10.4959,
+          "name": "European (11%)",
+          "size": 11.3279,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (13%)",
-          "size": 13.0851,
+          "size": 12.9476,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (58%)",
-          "size": 58.1239,
+          "name": "US (56%)",
+          "size": 56.4501,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (1%)",
-          "size": 0.6887,
+          "name": "Other (2%)",
+          "size": 1.8802,
           "fill": "#f98400"
         }
       ]
@@ -635,28 +635,28 @@
       "name": "Latvia",
       "children": [
         {
-          "name": "Domestic (6%)",
-          "size": 5.5225,
+          "name": "Domestic (5%)",
+          "size": 5.4,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (12%)",
-          "size": 11.8857,
+          "name": "European (13%)",
+          "size": 12.8404,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (17%)",
-          "size": 16.8515,
+          "size": 16.9684,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (65%)",
-          "size": 65.1779,
+          "name": "US (63%)",
+          "size": 63.3341,
           "fill": "#6f2c91"
         },
         {
           "name": "Other (1%)",
-          "size": 0.5625,
+          "size": 1.4571,
           "fill": "#f98400"
         }
       ]
@@ -665,28 +665,28 @@
       "name": "Montenegro",
       "children": [
         {
-          "name": "Domestic (1%)",
-          "size": 0.9477,
+          "name": "Domestic (12%)",
+          "size": 12.3665,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (12%)",
-          "size": 11.5353,
+          "name": "European (13%)",
+          "size": 13.4311,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (16%)",
-          "size": 16.4248,
+          "size": 15.636,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (61%)",
-          "size": 60.8335,
+          "name": "US (57%)",
+          "size": 56.7592,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (10%)",
-          "size": 10.2587,
+          "name": "Other (2%)",
+          "size": 1.8073,
           "fill": "#f98400"
         }
       ]
@@ -695,28 +695,28 @@
       "name": "Netherlands",
       "children": [
         {
-          "name": "Domestic (18%)",
-          "size": 17.7571,
+          "name": "Domestic (17%)",
+          "size": 17.1778,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (9%)",
-          "size": 8.9894,
+          "name": "European (11%)",
+          "size": 10.5484,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (15%)",
-          "size": 15.1718,
+          "size": 14.7461,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (57%)",
-          "size": 57.1127,
+          "name": "US (56%)",
+          "size": 55.8692,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (1%)",
-          "size": 0.969,
+          "name": "Other (2%)",
+          "size": 1.6584,
           "fill": "#f98400"
         }
       ]
@@ -726,27 +726,27 @@
       "children": [
         {
           "name": "Domestic (23%)",
-          "size": 23.4444,
+          "size": 22.5295,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (5%)",
-          "size": 5.4723,
+          "name": "European (6%)",
+          "size": 6.4139,
           "fill": "#FFCC00"
         },
         {
-          "name": "US-European (15%)",
-          "size": 14.514,
+          "name": "US-European (14%)",
+          "size": 14.2228,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (56%)",
-          "size": 56.0063,
+          "name": "US (55%)",
+          "size": 55.4184,
           "fill": "#6f2c91"
         },
         {
           "name": "Other (1%)",
-          "size": 0.5629,
+          "size": 1.4154,
           "fill": "#f98400"
         }
       ]
@@ -756,27 +756,27 @@
       "children": [
         {
           "name": "Domestic (22%)",
-          "size": 22.1408,
+          "size": 22.21,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (10%)",
-          "size": 9.6497,
+          "name": "European (11%)",
+          "size": 10.6468,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (14%)",
-          "size": 13.808,
+          "size": 13.6011,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (53%)",
-          "size": 53.2993,
+          "name": "US (52%)",
+          "size": 51.767,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (1%)",
-          "size": 1.1021,
+          "name": "Other (2%)",
+          "size": 1.7752,
           "fill": "#f98400"
         }
       ]
@@ -786,27 +786,27 @@
       "children": [
         {
           "name": "Domestic (4%)",
-          "size": 4.1306,
+          "size": 4.4362,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (8%)",
-          "size": 8.2081,
+          "name": "European (9%)",
+          "size": 9.1609,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (17%)",
-          "size": 17.0496,
+          "size": 16.5598,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (70%)",
-          "size": 69.8761,
+          "name": "US (68%)",
+          "size": 68.0577,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (1%)",
-          "size": 0.7356,
+          "name": "Other (2%)",
+          "size": 1.7853,
           "fill": "#f98400"
         }
       ]
@@ -816,27 +816,27 @@
       "children": [
         {
           "name": "Domestic (3%)",
-          "size": 2.8842,
+          "size": 2.8519,
           "fill": "#a6ce39"
         },
         {
           "name": "European (6%)",
-          "size": 5.6295,
+          "size": 5.9404,
           "fill": "#FFCC00"
         },
         {
-          "name": "US-European (18%)",
-          "size": 17.64,
+          "name": "US-European (17%)",
+          "size": 17.4651,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (73%)",
-          "size": 73.2923,
+          "name": "US (72%)",
+          "size": 71.7543,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (1%)",
-          "size": 0.554,
+          "name": "Other (2%)",
+          "size": 1.9883,
           "fill": "#f98400"
         }
       ]
@@ -846,27 +846,27 @@
       "children": [
         {
           "name": "Domestic (17%)",
-          "size": 17.1662,
+          "size": 17.4109,
           "fill": "#a6ce39"
         },
         {
           "name": "European (4%)",
-          "size": 3.9002,
+          "size": 4.0649,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (14%)",
-          "size": 14.1102,
+          "size": 14.3185,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (64%)",
-          "size": 64.1152,
+          "name": "US (63%)",
+          "size": 62.6568,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (1%)",
-          "size": 0.7082,
+          "name": "Other (2%)",
+          "size": 1.5489,
           "fill": "#f98400"
         }
       ]
@@ -876,27 +876,27 @@
       "children": [
         {
           "name": "Domestic (22%)",
-          "size": 21.9442,
+          "size": 22.2473,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (5%)",
-          "size": 5.3075,
+          "name": "European (7%)",
+          "size": 6.615,
           "fill": "#FFCC00"
         },
         {
-          "name": "US-European (16%)",
-          "size": 15.7645,
+          "name": "US-European (15%)",
+          "size": 15.1029,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (57%)",
-          "size": 56.7126,
+          "name": "US (55%)",
+          "size": 55.0679,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (0%)",
-          "size": 0.2712,
+          "name": "Other (1%)",
+          "size": 0.9669,
           "fill": "#f98400"
         }
       ]
@@ -906,27 +906,27 @@
       "children": [
         {
           "name": "Domestic (6%)",
-          "size": 5.8802,
+          "size": 6.0908,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (12%)",
-          "size": 12.06,
+          "name": "European (14%)",
+          "size": 14.3201,
           "fill": "#FFCC00"
         },
         {
-          "name": "US-European (14%)",
-          "size": 13.7137,
+          "name": "US-European (13%)",
+          "size": 13.1055,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (67%)",
-          "size": 67.3186,
+          "name": "US (65%)",
+          "size": 64.7061,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (1%)",
-          "size": 1.0275,
+          "name": "Other (2%)",
+          "size": 1.7774,
           "fill": "#f98400"
         }
       ]
@@ -936,27 +936,27 @@
       "children": [
         {
           "name": "Domestic (5%)",
-          "size": 5.0316,
+          "size": 4.9217,
           "fill": "#a6ce39"
         },
         {
-          "name": "European (15%)",
-          "size": 14.7194,
+          "name": "European (16%)",
+          "size": 15.9372,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (15%)",
-          "size": 14.8735,
+          "size": 14.6386,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (65%)",
-          "size": 65.012,
+          "name": "US (63%)",
+          "size": 63.0015,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (0%)",
-          "size": 0.3635,
+          "name": "Other (2%)",
+          "size": 1.5011,
           "fill": "#f98400"
         }
       ]
@@ -965,28 +965,28 @@
       "name": "Turkey",
       "children": [
         {
-          "name": "Domestic (56%)",
-          "size": 56.4231,
+          "name": "Domestic (55%)",
+          "size": 55.3583,
           "fill": "#a6ce39"
         },
         {
           "name": "European (3%)",
-          "size": 2.7092,
+          "size": 3.0704,
           "fill": "#FFCC00"
         },
         {
           "name": "US-European (8%)",
-          "size": 7.6086,
+          "size": 7.6073,
           "fill": "#5bbcd6"
         },
         {
-          "name": "American (33%)",
-          "size": 32.5317,
+          "name": "US (32%)",
+          "size": 32.4259,
           "fill": "#6f2c91"
         },
         {
-          "name": "Other (1%)",
-          "size": 0.7274,
+          "name": "Other (2%)",
+          "size": 1.5381,
           "fill": "#f98400"
         }
       ]
